@@ -4,6 +4,7 @@
 
 int main()
 {
+	// Creating an array of integers.
 	const int ARRAY_LENGTH = 100;
 
 	int data_set[ARRAY_LENGTH];
@@ -15,6 +16,7 @@ int main()
 
 	srand(2149);
 
+	// Pseudo random mixing of the array.
 	for (int i = 0; i < 100000; i++)
 	{
 		int rnd_index_1 = rand() % 100;
@@ -25,8 +27,10 @@ int main()
 		data_set[rnd_index_2] = buffer;
 	}
 
+	// Sorting of the array.
 	bubble_sort(data_set, ARRAY_LENGTH);
 
+	// Show result.
 	for (int i = 0; i < ARRAY_LENGTH; i++)
 	{
 		printf("%d\n", data_set[i]);
