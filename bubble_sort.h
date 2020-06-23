@@ -2,7 +2,8 @@
 #define BUBBLE_SORT_H_
 
 #include <stdbool.h>
+#include <stddef.h>
 
-extern void bubble_sort(int *const data_set, int length);
+extern int bubble_sort(int *const data_set, int length);
 
 #endif

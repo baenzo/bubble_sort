@@ -1,41 +1,37 @@
 #include "bubble_sort.h"
 
-void bubble_sort(int *const data_set, int length)
+int bubble_sort(int *const data_set, int length)
 {
-	bool sorted;
-	int end_of_unsorted_data = length - 1;
+	if (data_set == NULL)
+	{
+		return -1;
+	}
 
-	/* Count of iterations  to full sorting the array equal N-1.
-	 * Where N is count of array members.
-	 */
-	for (int i = 0; i < (length - 1); i ++)
+	if (length <= 0)
+	{
+		return -1;
+	}
+
+	bool sorted = true;
+
+	for ( ; length > 1; length--)
 	{
 		sorted = true;
 
-		for (int j = 0; j < (length - 1); j++)
+		for (int i = 0; i < (length - 1); i++)
 		{
-			if (j == end_of_unsorted_data)
+			if (data_set[i] > data_set[i+1])
 			{
-				end_of_unsorted_data --;
-				break;
-			}
-
-			if (data_set[j] > data_set[j+1])
-			{
-				int buffer = data_set[j];
-				data_set[j] = data_set[j+1];
-				data_set[j+1] = buffer;
+				int buffer = data_set[i];
+				data_set[i] = data_set[i+1];
+				data_set[i+1] = buffer;
 
 				sorted = false;
-
-				if ((j + 1) == end_of_unsorted_data)
-				{
-					end_of_unsorted_data = j;
-					continue;
-				}
 			}
 		}
 
 		if (sorted) break;
 	}
+
+	return 0;
 }

@@ -28,12 +28,17 @@ int main()
 	}
 
 	// Sorting of the array.
-	bubble_sort(data_set, ARRAY_LENGTH);
-
-	// Show result.
-	for (int i = 0; i < ARRAY_LENGTH; i++)
+	if (bubble_sort(data_set, ARRAY_LENGTH) >= 0)
 	{
-		printf("%d\n", data_set[i]);
+		// Show result.
+		for (int i = 0; i < ARRAY_LENGTH; i++)
+		{
+			printf("%d\n", data_set[i]);
+		}
+	}
+	else
+	{
+		printf("ERROR\n\n");
 	}
 
 	return 0;
