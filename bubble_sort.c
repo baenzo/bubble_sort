@@ -9,7 +9,7 @@ int bubble_sort(int *const data_set, int length)
 
 	if (length <= 0)
 	{
-		return -1;
+		return -2;
 	}
 
 	bool sorted = true;

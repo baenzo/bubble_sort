@@ -28,7 +28,7 @@ int main()
 	}
 
 	// Sorting of the array.
-	if (bubble_sort(data_set, ARRAY_LENGTH) >= 0)
+	if (bubble_sort(data_set, ARRAY_LENGTH) == 0)
 	{
 		// Show result.
 		for (int i = 0; i < ARRAY_LENGTH; i++)
