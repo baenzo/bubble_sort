@@ -2,6 +2,7 @@
 
 int bubble_sort(int *const data_set, int length)
 {
+	// Проверяем параметры на корректность.
 	if (data_set == NULL)
 	{
 		return -1;
@@ -12,11 +13,12 @@ int bubble_sort(int *const data_set, int length)
 		return -2;
 	}
 
-	bool sorted = true;
+	// Счетчик перестановок.
+	int permutation_count = 0;
 
 	for ( ; length > 1; length--)
 	{
-		sorted = true;
+		permutation_count = 0;
 
 		for (int i = 0; i < (length - 1); i++)
 		{
@@ -26,11 +28,12 @@ int bubble_sort(int *const data_set, int length)
 				data_set[i] = data_set[i+1];
 				data_set[i+1] = buffer;
 
-				sorted = false;
+				permutation_count ++;
 			}
 		}
 
-		if (sorted) break;
+		// Если перестановок не было, значит массив отсортирован.
+		if (permutation_count == 0) break;
 	}
 
 	return 0;
