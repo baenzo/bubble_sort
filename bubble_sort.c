@@ -3,22 +3,13 @@
 int bubble_sort(int *const data_set, int length)
 {
 	// Проверяем параметры на корректность.
-	if (data_set == NULL)
-	{
-		return -1;
-	}
-
-	if (length <= 0)
-	{
-		return -2;
-	}
-
-	// Счетчик перестановок.
-	int permutation_count = 0;
+	if (data_set == NULL) return -1;
+	if (length <= 0) return -2;
 
 	for ( ; length > 1; length--)
 	{
-		permutation_count = 0;
+		// Счетчик перестановок.
+		int permutation_count = 0;
 
 		for (int i = 0; i < (length - 1); i++)
 		{
