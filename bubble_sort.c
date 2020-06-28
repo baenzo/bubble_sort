@@ -11,15 +11,26 @@ int bubble_sort(int *const data_set, int length)
 		// Счетчик перестановок.
 		int permutation_count = 0;
 
+		int plume_length = 0;
+
 		for (int i = 0; i < (length - 1); i++)
 		{
+			int buffer = 0;
+
 			if (data_set[i] > data_set[i+1])
 			{
-				int buffer = data_set[i];
-				data_set[i] = data_set[i+1];
-				data_set[i+1] = buffer;
+				for (int idx_j = 0; idx_j <= plume_length; ++idx_j)
+				{
+					buffer = data_set[i-idx_j];
+					data_set[i-idx_j] = data_set[i-idx_j+1];
+					data_set[i-idx_j+1] = buffer;
+				}
 
 				permutation_count ++;
+			}
+			else if (data_set[i] == data_set[i+1])
+			{
+				++ plume_length;
 			}
 		}
 
